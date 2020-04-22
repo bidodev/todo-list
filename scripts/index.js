@@ -34,7 +34,7 @@ const addItem = () => {
     }
   }
 
-  const total = `All todos count: ${elements.tasksList.children.length} <span>(completed 0)</span>`;
+  const total = `All todos count: ${elements.tasksList.children.length} <span>(completed 1)</span>`;
   elements.todos.innerHTML = total;
 
   //clean the field input
