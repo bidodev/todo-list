@@ -34,14 +34,12 @@ header {
 .list-container {
   margin-top: 15vh;
   //border: 1px solid teal;
-  height: 70vh;
+  height: 80vh;
   width: 43vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  overflow: scroll;
-  overflow-x: hidden;
 }
 
 .tasks-list {
@@ -93,8 +91,9 @@ header {
   //border: 1px solid blue;
   display: flex;
   flex-direction: column;
-
   margin: 5rem;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .list-item {
@@ -113,21 +112,15 @@ header {
 
 .even {
   color: #e97f7a;
-
-  &:hover {
-    opacity: 0.5;
-
-    color: #f1f1f1;
-  }
 }
 
 .odd {
   color: #f1f1f1;
-  padding: 0.5rem;
+}
 
-  &:hover {
-    opacity: 0.5;
-  }
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.3rem;
 }
 
 /* The alert message box */
