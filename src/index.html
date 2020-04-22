@@ -8,11 +8,22 @@
   </head>
   <body>
     <header>
-      <div class="tasks-list">
-        <input class="tasks-list__input" type="text" />
-        <input class="tasks-list__btn" type="button" value="New Item" />
+      <div class="list-container">
+        <div class="tasks-list">
+          <input class="tasks-list__input" type="text" />
+          <input class="tasks-list__btn" type="button" value="New Item" />
+        </div>
+        <div class="alert hidden">
+          <span
+            class="closebtn"
+            onclick="this.parentElement.style.display='none';"
+            >&times;</span
+          >
+          <strong>Warning! </strong>You can not add a empty task! Please fill
+          the input and try again"
+        </div>
+        <ol id="results__list"></ol>
       </div>
-      <ol class="results__list"></ol>
     </header>
 
     <script src="./scripts/index.js"></script>

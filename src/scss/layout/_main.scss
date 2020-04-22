@@ -1,0 +1,83 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+//Example how to use image() function
+//background-image: image("header.jpg");
+header {
+  background-image: linear-gradient(
+    rgba(rgb(126, 124, 124), 0.4),
+    rgba(rgb(138, 88, 88), 0.7)
+  );
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.list-container {
+  margin: 0 auto;
+  //border: 1px solid teal;
+  height: 30vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.tasks-list {
+  margin: 0 auto;
+  width: 20vw;
+  height: 4vh;
+  display: flex;
+  justify-content: space-around;
+  //border: 1px solid red;
+}
+
+#results__list {
+  margin: 0 auto;
+  width: 20vw;
+  height: auto;
+  padding: 2rem;
+  //border: 1px solid blue;
+}
+
+li {
+  font-size: 2rem;
+  color: #181818;
+}
+
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+.success {
+  padding: 20px;
+  background-color: #0fc04a; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
