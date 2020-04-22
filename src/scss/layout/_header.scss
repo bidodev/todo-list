@@ -5,9 +5,18 @@
 //Example how to use image() function
 //background-image: image("header.jpg");
 header {
-  background-image: linear-gradient(rgba(#000, 0.4), rgba(#000, 0.7)),
-    image("header.jpg");
+  background-image: linear-gradient(
+    rgba(rgb(126, 124, 124), 0.4),
+    rgba(rgb(138, 88, 88), 0.7)
+  );
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+
+.tasks-list {
+  margin: 0 auto;
+  width: 30vw;
+  display: flex;
+  justify-content: center;
 }

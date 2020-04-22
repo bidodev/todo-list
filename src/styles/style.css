@@ -434,10 +434,17 @@ body {
 }
 
 header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../vendors/images/header.jpg");
+  background-image: linear-gradient(rgba(126, 124, 124, 0.4), rgba(138, 88, 88, 0.7));
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+
+.tasks-list {
+  margin: 0 auto;
+  width: 30vw;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */
