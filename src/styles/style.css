@@ -115,6 +115,7 @@ header {
 }
 .desc ul li {
   color: #f1f1f1;
+  font-size: 1.6rem;
 }
 
 .list-container {
@@ -151,11 +152,6 @@ header {
   width: 40vw;
   height: auto;
   list-style-type: none;
-}
-
-li {
-  font-size: 1.6rem;
-  list-style-type: square;
 }
 
 .list-item {
