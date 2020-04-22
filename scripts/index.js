@@ -24,8 +24,8 @@ const addItem = () => {
   } else {
     document.querySelector(".alert").classList.add("hidden");
 
-    const even = `<li>${userInput}</li>`;
-    const odd = `<li style='background:${colorGenerator()}'>${userInput}</li>`;
+    const even = `<li class="list-item even">${userInput}</li>`;
+    const odd = `<li class="list-item odd" style='background:${colorGenerator()}'>${userInput}</li>`;
 
     if (elements.tasksList.children.length % 2 !== 0) {
       elements.tasksList.insertAdjacentHTML("beforeend", odd);
