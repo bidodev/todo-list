@@ -27,18 +27,6 @@ html {
 }
 
 /**
- * Basic styles for links
- */
-li {
-  color: #e50050;
-  text-decoration: none;
-}
-li:hover, li:active, li:focus {
-  color: #222222;
-  text-decoration: underline;
-}
-
-/**
  * Basic typography style for copy text
  */
 body {
@@ -100,7 +88,18 @@ header {
   background-image: linear-gradient(rgba(126, 124, 124, 0.4), rgba(138, 88, 88, 0.7));
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desc {
+  height: auto;
+  width: 30vw;
+  line-height: 2;
+  padding: 0.5rem;
+  font-family: "Roboto";
 }
 
 .hidden {
@@ -109,7 +108,7 @@ header {
 
 .list-container {
   margin: 0 auto;
-  height: 30vh;
+  height: 20vh;
   width: 50vw;
   display: flex;
   flex-direction: column;
@@ -118,22 +117,34 @@ header {
 
 .tasks-list {
   margin: 0 auto;
-  width: 20vw;
-  height: 4vh;
+  width: 30vw;
+  height: 5vh;
   display: flex;
   justify-content: space-around;
 }
+.tasks-list__input {
+  border: none;
+  width: 40rem;
+  height: 4vh;
+}
+.tasks-list__btn {
+  width: 9rem;
+  padding: 1rem;
+  height: 4vh;
+  border: none;
+  color: #f1f1f1;
+  background-color: #181818;
+}
 
 #results__list {
-  margin: 0 auto;
-  width: 20vw;
+  width: 40vw;
   height: auto;
-  padding: 2rem;
 }
 
 li {
   font-size: 2rem;
   color: #181818;
+  padding: 0.5rem;
 }
 
 /* The alert message box */
