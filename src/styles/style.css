@@ -107,9 +107,11 @@ header {
 }
 .desc h1 {
   color: #fff;
-  text-align: center;
   margin-bottom: 2rem;
   font-size: 5rem;
+}
+.desc ul {
+  padding-left: 4rem;
 }
 .desc ul li {
   color: #f1f1f1;
