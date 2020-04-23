@@ -117,79 +117,94 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"js/views/base.js":[function(require,module,exports) {
+"use strict";
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.elements = void 0;
+var elements = {
+  ulist: document.querySelector("ul"),
+  userInput: document.querySelector(".user-input"),
+  subTitle: document.querySelector(".heading__subtitle")
+};
+exports.elements = elements;
+},{}],"js/index.js":[function(require,module,exports) {
+"use strict";
+
+var _base = require("./views/base");
+
+////////////////////////////////Select for our DOMString elements
+var checkString = function checkString() {//   console.log(userInput);
+}; ///////////////////////////////Function to create a new li
+
+
+var addItem = function addItem() {
+  //check if the user typed something in the input field
+  var inputLength = _base.elements.userInput.value.length;
+
+  if (inputLength > 0) {
+    var todosCount = _base.elements.ulist.children.length + 1;
+    _base.elements.subTitle.textContent = "All todos count: ".concat(todosCount); //let's create the element
+
+    var taskItem = document.createElement("li");
+    taskItem.textContent = "".concat(_base.elements.userInput.value); //create span (delete item) element
+
+    var deleteItem = document.createElement("span");
+    deleteItem.innerHTML = "<ion-icon name=\"close-outline\"></ion-icon>";
+    var checkItem = document.createElement("span");
+    checkItem.innerHTML = "<ion-icon name=\"checkmark\"></ion-icon>"; //lets give a class for our beloved deleteItem
+
+    deleteItem.className = "btn-del"; //lets give a class for our beloved checkitem
+
+    checkItem.className = "btn-check"; //lastStep let's insert the element (after begin of the u list)
+
+    _base.elements.ulist.insertAdjacentElement("afterbegin", taskItem); //insert span element after in the begin of li
+
+
+    taskItem.insertAdjacentElement("beforeend", checkItem); //insert span element after in the begin of li
+
+    taskItem.insertAdjacentElement("beforeend", deleteItem);
+    deleteItem.addEventListener("click", function () {
+      //console.log(taskItem.parentElement);
+      //taskItem.classList.toggle("line-through");
+      taskItem.remove();
+      document.querySelector(".heading__subtitle").textContent = "All todos count: ".concat(document.querySelector("ul").childNodes.length);
+      document.querySelector(".completed").textContent = "(completed: ".concat(document.querySelectorAll(".line-through").length, ")");
+    }); //check button inside the task item list
+
+    checkItem.addEventListener("click", function () {
+      //console.log(taskItem.parentElement);
+      taskItem.classList.toggle("line-through");
+      checkItem.classList.toggle("checked");
+      document.querySelector(".completed").textContent = "(completed: ".concat(document.querySelectorAll(".line-through").length, ")");
+    }); //clean the field input
+
+    _base.elements.userInput.value = "";
+  } else {
+    alert("Please write something..");
   }
+}; ///////////////////EVENTS HANDLER////////////////////////
 
-  return bundleURL;
-}
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
+document.querySelector("button").addEventListener("click", addItem);
+document.addEventListener("keypress", function (event) {
+  //check if the user pressed the return key (enter)
+  if (event.keyCode === 13) {
+    addItem();
   }
+});
+/**
+ * position
+    A DOMString representing the position relative to the targetElement; must match (case-insensitively) one of the following strings:
 
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./bido.jpg":[["bido.66349704.jpg","bido.jpg"],"bido.jpg"],"_css_loader":"../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+        'beforebegin': Before the targetElement itself.
+        'afterbegin': Just inside the targetElement, before its first child.
+        'beforeend': Just inside the targetElement, after its last child.
+        'afterend': After the targetElement itself.
+ */
+},{"./views/base":"js/views/base.js"}],"../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46237" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46605" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -393,5 +408,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style.97fcb138.js.map
+},{}]},{},["../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
+//# sourceMappingURL=/js.00a46daa.js.map

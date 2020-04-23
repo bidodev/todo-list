@@ -117,27 +117,37 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
-////////////////////////////////Select for our DOMString elements
+})({"base.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.elements = void 0;
 var elements = {
   ulist: document.querySelector("ul"),
-  userInput: document.querySelector(".user-input") //qli: document.querySelectorAll("li"), //r
-
+  userInput: document.querySelector(".user-input")
 };
+exports.elements = elements;
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
 
+var _base = require("./base.js");
+
+////////////////////////////////Select for our DOMString elements
 var checkString = function checkString() {//   console.log(userInput);
 }; ///////////////////////////////Function to create a new li
 
 
 var addItem = function addItem() {
   //check if the userrs typed something in the input field
-  var inputLength = elements.userInput.value.length;
+  var inputLength = _base.elements.userInput.value.length;
 
   if (inputLength > 0) {
     document.querySelector(".heading__subtitle").textContent = "All todos count: ".concat(document.querySelector("ul").children.length + 1); //let's create the element
 
     var taskItem = document.createElement("li");
-    taskItem.textContent = "".concat(elements.userInput.value); //create span (delete item) element
+    taskItem.textContent = "".concat(_base.elements.userInput.value); //create span (delete item) element
 
     var deleteItem = document.createElement("span");
     deleteItem.innerHTML = "<ion-icon name=\"close-outline\"></ion-icon>";
@@ -148,7 +158,8 @@ var addItem = function addItem() {
 
     checkItem.className = "btn-check"; //lastStep let's insert the element (after begin of the u list)
 
-    elements.ulist.insertAdjacentElement("afterbegin", taskItem); //insert span element after in the begin of li
+    _base.elements.ulist.insertAdjacentElement("afterbegin", taskItem); //insert span element after in the begin of li
+
 
     taskItem.insertAdjacentElement("beforeend", checkItem); //insert span element after in the begin of li
 
@@ -167,7 +178,7 @@ var addItem = function addItem() {
       document.querySelector(".completed").textContent = "(completed: ".concat(document.querySelectorAll(".line-through").length, ")");
     }); //clean the field input
 
-    elements.userInput.value = "";
+    _base.elements.userInput.value = "";
   } else {
     alert("Please try again");
   }
@@ -190,7 +201,7 @@ document.addEventListener("keypress", function (event) {
         'beforeend': Just inside the targetElement, after its last child.
         'afterend': After the targetElement itself.
  */
-},{}],"../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./base.js":"base.js"}],"../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -218,7 +229,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45437" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45573" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

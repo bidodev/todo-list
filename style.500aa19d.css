@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(rgba(175, 155, 155, 0.1), rgba(138, 88, 88, 0.4)), url("/bg.7077688b.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+  background-size: 100% 100%;
+}
+
+.tasks {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  font-family: Caveat;
+}
+
+.heading {
+  height: 30vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 12vh;
+  margin-left: 1vw;
+}
+.heading__title {
+  font-size: 4rem;
+}
+.heading__subtitle {
+  font-size: 2rem;
+}
+.heading .completed {
+  font-size: 2rem;
+  color: #d94845;
+}
+.heading .values {
+  display: flex;
+  width: 20vw;
+  align-items: center;
+  justify-content: space-around;
+}
+.heading__add-item {
+  width: 65%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  width: 42vw;
+  height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+  /* Remove the scrollbar Firefox */
+}
+
+ul::-webkit-scrollbar {
+  display: none;
+  /* Remove the scrollbar Safari and Chrome */
+}
+
+li {
+  width: 78%;
+  font-size: 2rem;
+  border-bottom: 1px dashed #000;
+  display: flex;
+  position: relative;
+  margin-left: 2rem;
+  padding: 0.5rem;
+  color: #d94845;
+}
+
+.btn-check {
+  color: #2b6312;
+  position: absolute;
+  left: 36vw;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.btn-check:hover {
+  opacity: 1;
+}
+
+.checked {
+  opacity: 1;
+}
+
+.btn-del {
+  color: #d94845;
+  position: absolute;
+  left: 38vw;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.btn-del:hover {
+  opacity: 1;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  color: #d94845;
+  opacity: 0.5;
+}
+button:hover {
+  opacity: 1;
+}
+
+ion-icon {
+  font-size: 48px;
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: #2b6312;
+}
+
+.user-input {
+  font-family: inherit;
+  font-size: 1.6rem;
+  padding: 0.3rem 1.5rem;
+  border-radius: 2px;
+  background-color: rgba(43, 99, 18, 0.2);
+  border: none;
+  border-bottom: 1px solid transparent;
+  width: 70%;
+  color: #796441;
+  font-family: Caveat;
+}
+.user-input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #971b1b;
+  color: #796441;
+}
+
+hr {
+  width: 80%;
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(151, 27, 27, 0.75), rgba(0, 0, 0, 0));
+}
+
+/*# sourceMappingURL=/style.500aa19d.css.map */
