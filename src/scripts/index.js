@@ -6,10 +6,10 @@ const elements = {
 };
 
 function getDarkColor() {
-  var letters = "0123456789".split("");
-  var color = "#";
+  let letters = "0123456789";
+  let color = "#";
   for (var i = 0; i < 6; i++) {
-    color += letters[Math.round(Math.random() * 10)];
+    color += letters[Math.round(Math.random() * 9)];
   }
   return color;
 }
