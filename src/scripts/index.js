@@ -5,14 +5,14 @@ const elements = {
   todos: document.querySelector(".todo__subtitle"),
 };
 
-const colorGenerator = () => {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * letters.length)];
+function getDarkColor() {
+  var letters = "0123456789".split("");
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.round(Math.random() * 10)];
   }
   return color;
-};
+}
 
 const addItem = () => {
   //grab the value from the field and save into a new variable
@@ -30,7 +30,7 @@ const addItem = () => {
     >&times;</span
   >`;
     const even = `<li class="even">${userInput}${span}</li>`;
-    const odd = `<li class="odd" style='color:${colorGenerator()}'>${userInput}${span}</li>`;
+    const odd = `<li class="odd" style='color:${getDarkColor()}'>${userInput}${span}</li>`;
 
     if (elements.tasksList.childNodes.length % 2 !== 0) {
       elements.tasksList.insertAdjacentHTML("afterbegin", odd);
