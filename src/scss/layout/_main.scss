@@ -49,7 +49,7 @@ header {
   justify-content: center;
   align-items: center;
   //border: 1px solid red;
-  margin-top: 9vh;
+  margin-top: 5vh;
 
   &__input {
     font-family: inherit;
@@ -96,18 +96,20 @@ header {
   overflow-x: hidden;
 }
 
-.list-item {
+li {
   font-size: 2rem;
   cursor: pointer;
   transition: all 0.5s;
   font-family: Caveat;
   font-size: 4rem;
-  text-decoration: underline;
+  border-bottom: 1px dashed #000;
+  display: flex;
+  align-items: center;
 }
 
 .riskado {
   text-decoration: line-through;
-  color: #e97f7a;
+  color: #0fc04a;
 }
 
 .even {
@@ -115,7 +117,6 @@ header {
 }
 
 .odd {
-  color: #f1f1f1;
 }
 
 ::-webkit-scrollbar {
@@ -160,4 +161,12 @@ header {
 ion-icon {
   font-size: 48px;
   color: #e97f7a;
+}
+
+.hr__styling {
+  margin-top: 4rem;
+  width: 80%;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #f4433620;
 }

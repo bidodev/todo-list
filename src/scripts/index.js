@@ -24,17 +24,22 @@ const addItem = () => {
   } else {
     document.querySelector(".alert").classList.add("hidden");
 
-    const even = `<li class="list-item even">${userInput}</li>`;
-    const odd = `<li class="list-item odd" style='color:${colorGenerator()}'>${userInput}</li>`;
+    const span = `<span
+    class="closebtn"
+    onclick="this.parentElement.classList.add('hidden');"
+    >&times;</span
+  >`;
+    const even = `<li class="even">${userInput}${span}</li>`;
+    const odd = `<li class="odd" style='color:${colorGenerator()}'>${userInput}${span}</li>`;
 
-    if (elements.tasksList.children.length % 2 !== 0) {
-      elements.tasksList.insertAdjacentHTML("beforeend", odd);
+    if (elements.tasksList.childNodes.length % 2 !== 0) {
+      elements.tasksList.insertAdjacentHTML("afterbegin", odd);
     } else {
-      elements.tasksList.insertAdjacentHTML("beforeend", even);
+      elements.tasksList.insertAdjacentHTML("afterbegin", even);
     }
   }
 
-  const total = `All todos count: ${elements.tasksList.children.length} <span>(completed 0)</span>`;
+  const total = `All todos count: ${elements.tasksList.children.length} <span>(completed 1)</span>`;
   elements.todos.innerHTML = total;
 
   //clean the field input
@@ -42,6 +47,7 @@ const addItem = () => {
 };
 
 ///////////////////EVENTS HANDLER////////////////////////
+
 elements.button.addEventListener("click", addItem);
 
 document.addEventListener("keypress", event => {
