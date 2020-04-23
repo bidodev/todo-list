@@ -7,15 +7,12 @@ const checkString = () => {
 
 ///////////////////////////////Function to create a new li
 const addItem = () => {
-  //check if the userrs typed something in the input field
+  //check if the user typed something in the input field
   const inputLength = elements.userInput.value.length;
 
   if (inputLength > 0) {
-    document.querySelector(
-      ".heading__subtitle"
-    ).textContent = `All todos count: ${
-      document.querySelector("ul").children.length + 1
-    }`;
+    const todosCount = elements.ulist.children.length + 1;
+    elements.subTitle.textContent = `All todos count: ${todosCount}`;
 
     //let's create the element
     const taskItem = document.createElement("li");
@@ -58,10 +55,12 @@ const addItem = () => {
       })`;
     });
 
+    //check button inside the task item list
     checkItem.addEventListener("click", () => {
       //console.log(taskItem.parentElement);
       taskItem.classList.toggle("line-through");
-      //taskItem.remove();
+      checkItem.classList.toggle("checked");
+
       document.querySelector(".completed").textContent = `(completed: ${
         document.querySelectorAll(".line-through").length
       })`;
@@ -70,7 +69,7 @@ const addItem = () => {
     //clean the field input
     elements.userInput.value = "";
   } else {
-    alert("Please try again");
+    alert("Please write something..");
   }
 };
 
