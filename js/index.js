@@ -73,8 +73,8 @@ const addItem = () => {
   }
 };
 
-///////////////////EVENTS HANDLER////////////////////////
-document.querySelector("button").addEventListener("click", addItem);
+///////////////////EVENTS HANDLERS////////////////////////
+elements.btnAdd.addEventListener("click", addItem);
 
 document.addEventListener("keypress", event => {
   //check if the user pressed the return key (enter)
