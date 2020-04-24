@@ -127,7 +127,8 @@ exports.elements = void 0;
 var elements = {
   ulist: document.querySelector("ul"),
   userInput: document.querySelector(".user-input"),
-  subTitle: document.querySelector(".heading__subtitle")
+  subTitle: document.querySelector(".heading__subtitle"),
+  btnAdd: document.querySelector("button")
 };
 exports.elements = elements;
 },{}],"js/index.js":[function(require,module,exports) {
@@ -185,10 +186,11 @@ var addItem = function addItem() {
   } else {
     alert("Please write something..");
   }
-}; ///////////////////EVENTS HANDLER////////////////////////
+}; ///////////////////EVENTS HANDLERS////////////////////////
 
 
-document.querySelector("button").addEventListener("click", addItem);
+_base.elements.btnAdd.addEventListener("click", addItem);
+
 document.addEventListener("keypress", function (event) {
   //check if the user pressed the return key (enter)
   if (event.keyCode === 13) {
@@ -232,7 +234,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46605" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41755" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

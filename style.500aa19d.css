@@ -17,7 +17,8 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: 45vw;
+  margin: 0 auto;
   font-family: Caveat;
 }
 
@@ -27,9 +28,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 12vh;
   margin-left: 1vw;
+  color: #181818;
 }
 .heading__title {
   font-size: 4rem;
@@ -37,9 +39,14 @@ body {
 .heading__subtitle {
   font-size: 2rem;
 }
+.heading h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #282828;
+}
 .heading .completed {
   font-size: 2rem;
-  color: #d94845;
+  color: #2b6312;
 }
 .heading .values {
   display: flex;
@@ -78,7 +85,7 @@ li {
   border-bottom: 1px dashed #000;
   display: flex;
   position: relative;
-  margin-left: 2rem;
+  margin-left: 2.7rem;
   padding: 0.5rem;
   color: #d94845;
 }
@@ -86,7 +93,7 @@ li {
 .btn-check {
   color: #2b6312;
   position: absolute;
-  left: 36vw;
+  left: 35.5vw;
   cursor: pointer;
   opacity: 0.5;
 }
@@ -101,7 +108,7 @@ li {
 .btn-del {
   color: #d94845;
   position: absolute;
-  left: 38vw;
+  left: 37.5vw;
   cursor: pointer;
   opacity: 0.5;
 }
@@ -136,22 +143,22 @@ ion-icon {
   font-size: 1.6rem;
   padding: 0.3rem 1.5rem;
   border-radius: 2px;
-  background-color: rgba(43, 99, 18, 0.2);
+  background-color: rgba(194, 58, 53, 0.1);
   border: none;
   border-bottom: 1px solid transparent;
-  width: 70%;
-  color: #796441;
+  width: 75%;
+  color: #181818;
   font-family: Caveat;
 }
 .user-input:focus {
   outline: none;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid #971b1b;
-  color: #796441;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #971b1b;
+  color: #181818;
 }
 
 hr {
-  width: 80%;
+  width: 90%;
   border: 0;
   height: 2px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(151, 27, 27, 0.75), rgba(0, 0, 0, 0));
