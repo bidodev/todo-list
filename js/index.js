@@ -1,9 +1,6 @@
-////////////////////////////////Select for our DOMString elements
+////////////////////////////////Import the necessary modules
 import { elements } from "./views/base";
-
-const checkString = () => {
-  //   console.log(userInput);
-};
+import * as newTodo from "./views/addItem";
 
 ///////////////////////////////Function to create a new li
 const addItem = () => {
@@ -11,9 +8,6 @@ const addItem = () => {
   const inputLength = elements.userInput.value.length;
 
   if (inputLength > 0) {
-    const todosCount = elements.ulist.children.length + 1;
-    elements.subTitle.textContent = `All todos count: ${todosCount}`;
-
     //let's create the element
     const taskItem = document.createElement("li");
     taskItem.textContent = `${elements.userInput.value}`;
@@ -46,9 +40,7 @@ const addItem = () => {
       taskItem.remove();
       document.querySelector(
         ".heading__subtitle"
-      ).textContent = `All todos count: ${
-        document.querySelector("ul").childNodes.length
-      }`;
+      ).textContent = `All todos count: ${elements.ulist.childElementCount}`;
 
       document.querySelector(".completed").textContent = `(completed: ${
         document.querySelectorAll(".line-through").length
@@ -66,8 +58,10 @@ const addItem = () => {
       })`;
     });
 
-    //clean the field input
-    elements.userInput.value = "";
+    const todosCount = elements.ulist.childElementCount;
+    elements.subTitle.textContent = `All todos count: ${todosCount}`;
+    //clean the inut field input
+    newTodo.clearInput();
   } else {
     alert("Please write something..");
   }
